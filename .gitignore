@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# subscriber data (old location - no longer used)
+/data
+
+# Don't ignore public data exports (these are meant to be public)
+# /public/data-exports
