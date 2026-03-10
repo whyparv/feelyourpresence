@@ -5,10 +5,10 @@ import path from "path";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { filename: string } }
+  { params }: { params: Promise<{ filename: string }> }
 ) {
   try {
-    const filename = params.filename;
+    const { filename } = await params;
 
     // Security: Only allow specific file patterns
     if (!filename.match(/^(subscribers|stats)-[a-f0-9]{16}\.(txt|json)$/)) {
